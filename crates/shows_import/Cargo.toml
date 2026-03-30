@@ -1,0 +1,11 @@
+[package]
+name = "shows_import"
+version.workspace = true
+edition.workspace = true
+
+[dependencies]
+burn = {workspace = true, features = ["vulkan", "wgpu"]}
+tokenizers = {workspace = true}
+serde = {workspace = true}
+polars = {workspace = true}
+itertools = {workspace = true}

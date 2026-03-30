@@ -1,0 +1,79 @@
+[package]
+name = "imdb2000_recommender"
+version = "0.1.0"
+edition = "2024"
+
+[workspace.dependencies]
+rig-core = {version = "0.33", features = ["all"]}
+tokio = {version = "1.5", features = ["macros", "rt-multi-thread"]}
+anyhow = {version = "1.0"}
+dioxus-desktop = {version = "0.7"}
+
+codespan-reporting = { version = "0.12", default-features = false, features = ["std"] }
+futures-util = "0.3"
+dioxus-signals = {version = "0.7"}
+polars = {version = "0.49", features = ["lazy", "temporal", "strings", "diagonal_concat", "regex", "timezones", "csv"]}
+sysinfo = {version = "0.37.2"}
+charton = "0.2"
+dioxus = {version = "0.7", features = ["html", "signals", "hooks", "macro", "desktop", "asset", "document", "launch", "devtools"]}
+burn = { version = "0.18", features = ["wgpu"]}
+burn-import = { version = "0.18" }
+tokenizers = "0.22"
+hf-hub = "0.4"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+burn-store = {version = "0.18"}
+shows_import = {path = "./crates/shows_import"}
+itertools = "0.14"
+dioxus-document = {version = "0.7"}
+base64 = "0.22"
+derive-new = "0.7.0"
+candle-core = { version = "0.9.2" }
+libm = "0.2.8"
+roberta = {path = "./crates/roberta"}
+bytemuck = "1"
+fast-float = "0.2"
+lazy_static = "1.5"
+futures-channel = "0.3"
+enumset = "1.1"
+dioxus-html = "0.7"
+
+[dependencies]
+rig-core = {workspace = true}
+tokio = {workspace = true}
+anyhow = {workspace = true}
+dioxus-desktop = {workspace = true}
+futures-util = {workspace = true}
+dioxus-signals = {workspace = true}
+polars = {workspace = true}
+sysinfo = {workspace = true}
+charton = {workspace = true}
+dioxus = {workspace = true}
+base64 = {workspace = true}
+roberta = {workspace = true}
+itertools = {workspace = true}
+fast-float = {workspace = true}
+bytemuck = {workspace = true}
+lazy_static = {workspace = true}
+futures-channel = {workspace = true}
+dioxus-document = {workspace = true}
+dioxus-html = {workspace = true}
+enumset = {workspace = true}
+[workspace]
+members = [
+    "crates/*",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+
+[lints.clippy]
+unstable_lints = "deny"
+
+# [profile.release]
+# opt-level = 3 
+# lto = "fat"
+# codegen-units = 1 
+# panic = "abort" 
+# strip = "none"

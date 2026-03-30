@@ -1,0 +1,34 @@
+[application]
+
+# App (Project) Name
+name = "IMDB2000Recommender"
+
+# Dioxus App Default Platform
+# desktop, web, mobile, ssr
+default_platform = "desktop"
+
+# `build` & `serve` dist path
+out_dir = "dist"
+
+# resource (public) file folder
+asset_dir = "assets"
+
+script = []
+
+[bundle]
+identifier = "com.imdb2000recommender"
+publisher = "rydb"
+icon = ["assets/icon.png", "assets/flavicon.ico"]
+copyright = "MIT"
+short_description = "A utility application built with Dioxus"
+long_description = "This application provides various utility functions..."
+category = "Utility"
+
+
+[web.watcher]
+
+# When watcher is triggered, regenerate the `index.html`
+reload_html = true
+
+# Which files or dirs will be monitored
+watch_path = ["src", "public"]
