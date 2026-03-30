@@ -1,0 +1,76 @@
+{
+  "_comment_build_command": "cargo-flatpak bundle --preset dx",
+  "_comment_cargo-flatpak_version": "6fb5fe36cc84c3b6d0ea419019ff3868400c6c76",
+  "_zzcomment_cargo-flatpak_expanded": "(\n    Bundle,\n    BuildArgs {\n        preset: Dx,\n        builder: Some(\n            \"dx build --release\",\n        ),\n        project_root: Some(\n            \".\",\n        ),\n        target_dir_path: Some(\n            \"./target/cargo-flatpak\",\n        ),\n        app_id: Some(\n            \"com.example.imdb2000_recommender\",\n        ),\n        binary_name: Some(\n            \"imdb2000_recommender\",\n        ),\n        bundle_dir_path: Some(\n            \"./target/cargo-flatpak\",\n        ),\n    },\n)",
+  "build-options": {
+    "append-path": "/usr/lib/sdk/rust-stable/bin:/opt/rust/bin",
+    "env": {
+      "CARGO_HOME": "/run/build/imdb2000_recommender/cargo",
+      "GDK_BACKEND": "x11",
+      "PKG_CONFIG_PATH": "/app/lib/pkgconfig:/app/share/pkgconfig:/usr/lib/pkgconfig:/usr/share/pkgconfig",
+      "RUSTFLAGS": "-C link-arg=-L/app/lib"
+    }
+  },
+  "command": "imdb2000_recommender",
+  "finish-args": [
+    "--share=ipc",
+    "--socket=x11",
+    "--device=dri",
+    "--socket=wayland",
+    "--share=network"
+  ],
+  "id": "com.example.imdb2000_recommender",
+  "modules": [
+    {
+      "build-commands": [
+        "make PREFIX=/app",
+        "make install PREFIX=/app"
+      ],
+      "builddir": true,
+      "buildsystem": "simple",
+      "name": "xdotool",
+      "sources": [
+        {
+          "sha256": "96f0facfde6d78eacad35b91b0f46fecd0b35e474c03e00e30da3fdd345f9ada",
+          "type": "archive",
+          "url": "https://github.com/jordansissel/xdotool/releases/download/v3.20211022.1/xdotool-3.20211022.1.tar.gz"
+        }
+      ]
+    },
+    {
+      "build-commands": [
+        "install -Dm755 dx /app/bin/dx"
+      ],
+      "buildsystem": "simple",
+      "name": "dx",
+      "sources": [
+        {
+          "path": "dx",
+          "type": "file"
+        }
+      ]
+    },
+    {
+      "build-commands": [
+        "export PATH=\"/opt/rust/bin:$PATH\"",
+        "dx build --release",
+        "cp -r ./target/dx/imdb2000_recommender/release/linux/app/* /app/bin/",
+        "chmod +x /app/bin/imdb2000_recommender"
+      ],
+      "buildsystem": "simple",
+      "name": "imdb2000_recommender",
+      "sources": [
+        {
+          "path": "src",
+          "type": "dir"
+        }
+      ]
+    }
+  ],
+  "runtime": "org.gnome.Platform",
+  "runtime-version": "50",
+  "sdk": "org.gnome.Sdk",
+  "sdk-extensions": [
+    "org.freedesktop.Sdk.Extension.rust-stable"
+  ]
+}
