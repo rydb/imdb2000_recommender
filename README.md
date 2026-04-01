@@ -27,7 +27,7 @@ The result is a desktop app that helps users discover hidden gems from the IMDb 
 - **Cross‑Platform** – Ready‑to‑use binaries for Windows, plus Flatpak support for Linux.
 
 
-## 🛠️ Tech Stack
+## 🧰 Tech Stack
 
 | Component       | Technology                          |
 |-----------------|-------------------------------------|
@@ -36,7 +36,7 @@ The result is a desktop app that helps users discover hidden gems from the IMDb 
 | ML Models       | RoBERTa (via `bert-burn`), DeepSeek |
 ---
 
-## Running:
+## 🚀 Running:
 
 #### Linux
 
@@ -52,7 +52,7 @@ The result is a desktop app that helps users discover hidden gems from the IMDb 
 ---
 
 
-## Build from source:
+## 🛠️ Build from source:
 
 - install the latest dioxus cli 
 `cargo install --git https://github.com/DioxusLabs/dioxus dioxus-cli --locked`
