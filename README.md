@@ -54,7 +54,9 @@ The result is a desktop app that helps users discover hidden gems from the IMDb 
 
 ## 🛠️ Build from source:
 
-- install the latest dioxus cli 
+- install the latest rust stable toolchain
+`https://rust-lang.org/tools/install/`
+- install the latest dioxus cli
 `cargo install --git https://github.com/DioxusLabs/dioxus dioxus-cli --locked`
 - dx serve --desktop
 
