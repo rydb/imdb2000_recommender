@@ -27,6 +27,14 @@ The result is a desktop app that helps users discover hidden gems from the IMDb 
 - **Cross‑Platform** – Ready‑to‑use binaries for Windows, plus Flatpak support for Linux.
 
 
+## 🎬 Demo
+
+
+
+https://github.com/user-attachments/assets/12366ab8-c4f7-47ef-9041-d2e880e7698f
+
+
+
 ## 🧰 Tech Stack
 
 | Component       | Technology                          |
